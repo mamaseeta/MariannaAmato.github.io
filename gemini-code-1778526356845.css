@@ -1,0 +1,109 @@
+:root {
+  --sage-bg: #f2f4f1; /* Psychological calm and growth */
+  --academic-blue: #1a3a4a; /* Serious, impactful depth */
+  --chic-gold: #c5a059; /* The "Funky" accent for highlights */
+  --text-main: #2d2d2d;
+  --white: #ffffff;
+  
+  --title-font: 'Noto Serif', serif;
+  --body-font: 'Montserrat', sans-serif;
+}
+
+body {
+  background: var(--sage-bg);
+  color: var(--text-main);
+  font-family: var(--body-font);
+  margin: 0;
+}
+
+/* Sidebar - The "Serious" Anchor */
+.sidebar {
+  background: var(--academic-blue);
+  color: var(--white);
+  padding: 40px 20px;
+  position: fixed;
+  width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--chic-gold); /* The funky pop */
+  margin-bottom: 20px;
+}
+
+.name {
+  font-family: var(--title-font);
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  color: var(--chic-gold);
+}
+
+/* Nav Links */
+.navlist a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 200;
+  display: block;
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+.navlist a:hover {
+  color: var(--chic-gold);
+  transform: translateX(5px);
+}
+
+/* Poetic Manifesto Section */
+.hero {
+  margin-left: 280px;
+  padding: 80px 50px;
+  background: rgba(26, 58, 74, 0.03);
+}
+
+.poetic-quote {
+  font-family: var(--title-font);
+  font-style: italic;
+  font-size: 1.4rem;
+  border-left: 4px solid var(--chic-gold);
+  padding-left: 20px;
+  margin-top: 30px;
+  color: var(--academic-blue);
+}
+
+/* Gallery Styling */
+.artifact-card {
+  background: var(--white);
+  padding: 15px;
+  border-radius: 2px; /* Sharp and chic */
+  box-shadow: 10px 10px 0px var(--academic-blue); /* Funky offset shadow */
+  margin-bottom: 30px;
+}
+
+.artifact-img-placeholder {
+  background: #eee;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.funky-border {
+  border: 1px solid var(--academic-blue);
+  transition: all 0.3s ease;
+}
+
+.funky-border:hover {
+  background: var(--chic-gold);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .sidebar { position: relative; width: 100%; height: auto; }
+  .hero { margin-left: 0; }
+}
