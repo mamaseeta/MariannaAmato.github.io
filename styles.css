@@ -1,0 +1,142 @@
+:root {
+  --sage: #8a9a8a;
+  --cream: #f9f8f5;
+  --sand: #e8e2db;
+  --deep-text: #2c2c2c;
+  --accent: #5d6b5d;
+  
+  --serif: 'Playfair Display', serif;
+  --sans: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--cream);
+  color: var(--deep-text);
+  font-family: var(--sans);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.layout { display: flex; }
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  background: var(--sand);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0,0,0,0.05);
+}
+
+.name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-top: 10px;
+}
+
+.navlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 80px;
+}
+
+.navlist li { margin: 20px 0; }
+
+.navlist a {
+  text-decoration: none;
+  color: var(--deep-text);
+  font-weight: 300;
+  transition: color 0.3s;
+}
+
+.navlist a:hover { color: var(--sage); }
+
+main { margin-left: 300px; width: 100%; }
+
+.hero {
+  padding: 120px 80px 60px 80px;
+  background: white;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: 3rem;
+  line-height: 1.1;
+  max-width: 800px;
+  font-weight: 400;
+}
+
+.bio-text {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin-top: 30px;
+  color: #555;
+}
+
+.content { padding: 80px; max-width: 800px; }
+
+.section-title {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: var(--accent);
+}
+
+.project {
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sand);
+}
+
+.project h3 { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 5px; }
+
+.project-meta {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.artifact-placeholder {
+  background: var(--sand);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 1px solid var(--deep-text);
+  text-decoration: none;
+  color: var(--deep-text);
+  transition: all 0.3s;
+}
+
+.cv-button:hover {
+  background: var(--deep-text);
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  .sidebar { position: relative; width: 100%; height: auto; }
+  main { margin-left: 0; }
+  h1 { font-size: 2.2rem; }
+}
