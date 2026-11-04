@@ -1,151 +1,393 @@
-Here is your updated HTML code, formatted and organized to integrate your bio statement, contact details, publications, research projects, teaching experience, and community praxis directly from your CV.
+Here is a complete, self-contained HTML file using the **single-column centered card layout** from the original code styling (clean white container, top header, elegant typography, and modern cards for projects and publications). It combines the aesthetic structure you prefer with all your actual CV data and research details.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marianna Amato | Ph.D. Student | UC San Diego</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marianna Amato | Ph.D. Student, Education | UCSD</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Deep academic navy */
+            --primary-hover: #1d4ed8;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --accent-bg: #f1f5f9;
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 2rem auto;
+            padding: 3.5rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* HEADER & CONTACT */
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .profile-titles h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-titles h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2.section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-left: 4px solid var(--primary);
+            padding-left: 0.75rem;
+        }
+
+        /* ABOUT / BIO */
+        .bio-card {
+            background-color: var(--bg-light);
+            padding: 1.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .bio-card p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .bio-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CARDS / ITEMS */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .item-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .item-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .item-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: #dbeafe;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .item-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* LIST STYLES (PUBLICATIONS) */
+        .pub-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pub-list li {
+            padding: 1.25rem;
+            border-left: 3px solid var(--primary);
+            background: var(--bg-light);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.98rem;
+            color: var(--text-dark);
+        }
+
+        .pub-list strong {
+            color: var(--primary);
+        }
+
+        /* BUTTONS */
+        .cv-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .cv-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.75rem;
+                margin: 0;
+                border-radius: 0;
+            }
+            .contact-info {
+                align-items: flex-start;
+            }
+            header {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="profile">
-        <h1 class="name">MARIANNA AMATO</h1>
-        <p class="tagline">Ph.D. Student in Education<br>University of California, San Diego</p>
-      </div>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="profile-titles">
+                <h1>Marianna Amato</h1>
+                <h2>Ph.D. Student in Education Studies</h2>
+                <h2>University of California, San Diego</h2>
+            </div>
+            <div class="contact-info">
+                <span><strong>Email:</strong> <a href="mailto:mamato@ucsd.edu">mamato@ucsd.edu</a></span>
+                <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marianna-a-12bb7624b/" target="_blank" rel="noopener">marianna-a-12bb7624b</a></span>
+                <span style="color: var(--text-muted);">San Diego, CA</span>
+            </div>
+        </header>
 
-      <div class="sidebar-contact">
-        <p><strong>Email:</strong> <a href="mailto:mamato@ucsd.edu">mamato@ucsd.edu</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marianna-a-12bb7624b/" target="_blank" rel="noopener">marianna-a-12bb7624b</a></p>
-        <p><strong>Location:</strong> Department of Education Studies, UCSD</p>
-      </div>
+        <!-- Top Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research & Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#teaching">Teaching & Mentorship</a></li>
+                <li><a href="#community">Community Praxis</a></li>
+                <li><a href="#cv">CV</a></li>
+            </ul>
+        </nav>
 
-      <nav>
-        <ul class="navlist">
-          <li><a href="#about">About</a></li>
-          <li><a href="#research">Research & Projects</a></li>
-          <li><a href="#publications">Publications & Papers</a></li>
-          <li><a href="#teaching">Teaching & Mentorship</a></li>
-          <li><a href="#community">Community Praxis</a></li>
-          <li><a href="#artifacts">Artifacts</a></li>
-          <li><a href="#cv">CV</a></li>
-        </ul>
-      </nav>
-    </aside>
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About & Research Statement</h2>
+            <div class="bio-card">
+                <p>
+                    Marianna’s research examines how institutional and cultural contexts shape belonging, support, and wellbeing for marginalized students, with a focus on the transition to college. She studies the sources of support including family, faculty, community, and emerging technologies, and the responsibility institutions hold in making those supports accessible, particularly for Latiné, LGBTQ+, and other students at the intersections of marginalization.
+                </p>
+                <p>
+                    Her community-engaged inquiry seeks to understand both broad patterns in student experience and how institutional policies play out in practice. Her work is grounded in intersectionality and critical frameworks, including LatCrit and queer theory, to challenge deficit framings of students and inform more equitable campus practice. She also mentors undergraduate researchers and prospective graduate applicants and has supported college access programming in San Diego since 2021.
+                </p>
+            </div>
+        </section>
 
-    <main>
-      <!-- Hero / About Section -->
-      <section id="about" class="hero">
-        <h2>About & Research Statement</h2>
-        <p class="bio-text">
-          Marianna’s research examines how institutional and cultural contexts shape belonging, support, and wellbeing for marginalized students, with a focus on the transition to college. She studies the sources of support including family, faculty, community, and emerging technologies, and the responsibility institutions hold in making those supports accessible, particularly for Latiné, LGBTQ+, and other students at the intersections of marginalization.
-        </p>
-        <p class="bio-text">
-          Her community-engaged inquiry seeks to understand both broad patterns in student experience and how institutional policies play out in practice. Her work is grounded in intersectionality and critical frameworks, including LatCrit and queer theory, to challenge deficit framings of students and inform more equitable campus practice. She also mentors undergraduate researchers and prospective graduate applicants and has supported college access programming in San Diego since 2021.
-        </p>
-      </section>
-
-      <div class="content">
         <!-- Research Section -->
-        <section id="research" class="section">
-          <h2 class="section-title">Selected Research & Projects</h2>
-          
-          <div class="project">
-            <h3>Latiné Student Adjustment & Institutional Responsibility at HSIs</h3>
-            <p class="project-meta">Project Lead | Quantitative & LatCrit Inquiry</p>
-            <p>Conducting empirical studies applying LatCrit frameworks to examine family support (familismo), professor impact, social adjustment, and mental health among Latiné college students at Hispanic-Serving Institutions.</p>
-          </div>
+        <section id="research">
+            <h2 class="section-title">Selected Research & Projects</h2>
+            <div class="card-grid">
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Latiné Student Adjustment & Institutional Responsibility at HSIs</span>
+                        <span class="item-badge">Project Lead</span>
+                    </div>
+                    <p class="item-desc">Conducting empirical studies applying LatCrit frameworks to examine family support (familismo), professor impact, social adjustment, and mental health among Latiné college students at Hispanic-Serving Institutions.</p>
+                </div>
 
-          <div class="project">
-            <h3>Human-AI Relationships & Moral Perception</h3>
-            <p class="project-meta">Project Co-Lead & GRA | Participatory Action Research</p>
-            <p>Investigating how LGBTQ+ young adults utilize AI chatbots for companionship and emotional support using AI photovoice methods, as well as multi-institution quantitative analysis on higher education students' moral beliefs and learning behaviors regarding AI.</p>
-          </div>
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Human-AI Relationships & Moral Perception</span>
+                        <span class="item-badge">Project Co-Lead / GRA</span>
+                    </div>
+                    <p class="item-desc">Investigating how LGBTQ+ young adults utilize AI chatbots for companionship and emotional support using AI photovoice methods, as well as multi-institution quantitative analysis on higher education students' moral beliefs and learning behaviors regarding AI.</p>
+                </div>
 
-          <div class="project">
-            <h3>California Healthy Youth Act (AB 329) Policy Analysis</h3>
-            <p class="project-meta">Project Lead | Critical Policy Analysis</p>
-            <p>Utilizing Lipsky’s street-level bureaucracy theory and queer theory to examine the uneven implementation of California's LGBTQ+-inclusive sex education mandates in public secondary schools.</p>
-          </div>
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">California Healthy Youth Act (AB 329) Policy Analysis</span>
+                        <span class="item-badge">Project Lead</span>
+                    </div>
+                    <p class="item-desc">Utilizing Lipsky’s street-level bureaucracy theory and queer theory to examine the uneven implementation of California's LGBTQ+-inclusive sex education mandates in public secondary schools.</p>
+                </div>
 
-          <div class="project">
-            <h3>Intersectional Stress & Wellbeing in Sexual Minority Youth</h3>
-            <p class="project-meta">Graduate Research Assistant | Lavender Lab (UMD) & SDSU</p>
-            <p>Examining associations between intersectional oppression-based stress, PTSS, suicidality, and protective social factors among national samples of sexual minority adolescents and young adults of color.</p>
-          </div>
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Intersectional Stress & Wellbeing in Sexual Minority Youth</span>
+                        <span class="item-badge">GRA</span>
+                    </div>
+                    <p class="item-desc">Examining associations between intersectional oppression-based stress, PTSS, suicidality, and protective social factors among national samples of sexual minority adolescents and young adults of color.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Publications Section -->
-        <section id="publications" class="section">
-          <h2 class="section-title">Peer-Reviewed Publications</h2>
-          <ul class="pub-list">
-            <li>
-              <strong>Amato, M.</strong>, Lazarevic, V., & Shapiro, A. (2024). Exploring the college adjustment of Latiné students at Hispanic-Serving Institutions. <em>Journal of Underrepresented and Minority Progress</em>, 8(1), 1–22.
-            </li>
-            <li>
-              Sullivan, T., <strong>Amato, M.</strong>, Goldbach, J., & Mereish, E. (2026). Oppression-based stress, PTSD symptoms, and suicidality associations among a national sample of sexual minority adolescents of color. <em>Journal of Traumatic Stress</em>, 39(1), 45–58.
-            </li>
-            <li>
-              Jessup, O., Nacht, C., <strong>Amato, M.</strong>, Hong, C., & Storholm, E. (2024). How the intersection of identity factors impacts gay/bisexual men's experience of intimate partner violence. <em>Journal of LGBT Health</em>, 11(2), 115–124.
-            </li>
-            <li>
-              Nacht, C., Reynolds, H., Jessup, O., <strong>Amato, M.</strong>, & Storholm, E. (2024). The association between social support and PrEP use/adherence among sexual minority men in the United States: A scoping literature review. <em>Journal of LGBT Health</em>, 11(3), 180–192.
-            </li>
-          </ul>
+        <section id="publications">
+            <h2 class="section-title">Peer-Reviewed Publications</h2>
+            <ul class="pub-list">
+                <li>
+                    <strong>Amato, M.</strong>, Lazarevic, V., & Shapiro, A. (2024). Exploring the college adjustment of Latiné students at Hispanic-Serving Institutions. <em>Journal of Underrepresented and Minority Progress</em>, 8(1), 1–22.[cite: 3]
+                </li>
+                <li>
+                    Sullivan, T., <strong>Amato, M.</strong>, Goldbach, J., & Mereish, E. (2026). Oppression-based stress, PTSD symptoms, and suicidality associations among a national sample of sexual minority adolescents of color. <em>Journal of Traumatic Stress</em>, 39(1), 45–58.[cite: 3]
+                </li>
+                <li>
+                    Jessup, O., Nacht, C., <strong>Amato, M.</strong>, Hong, C., & Storholm, E. (2024). How the intersection of identity factors impacts gay/bisexual men's experience of intimate partner violence. <em>Journal of LGBT Health</em>, 11(2), 115–124.[cite: 3]
+                </li>
+                <li>
+                    Nacht, C., Reynolds, H., Jessup, O., <strong>Amato, M.</strong>, & Storholm, E. (2024). The association between social support and PrEP use/adherence among sexual minority men in the United States: A scoping literature review. <em>Journal of LGBT Health</em>, 11(3), 180–192.[cite: 3]
+                </li>
+            </ul>
         </section>
 
         <!-- Teaching & Mentorship Section -->
-        <section id="teaching" class="section">
-          <h2 class="section-title">Teaching & Mentorship</h2>
-          <div class="experience-item">
-            <h3>Undergraduate Research Pedagogy & Mentorship</h3>
-            <p class="project-meta">Lab Lead | UC San Diego</p>
-            <p>Train, supervise, and mentor undergraduate research assistants in qualitative coding protocols, literature mapping, IRB compliance, and academic writing.</p>
-          </div>
-          <div class="experience-item">
-            <h3>Graduate Teaching Assistant</h3>
-            <p class="project-meta">UC San Diego & San Diego State University</p>
-            <p>Courses served: <em>The Social Organization of Education (EDS 126)</em>, <em>Partners At Learning (PAL)</em>, <em>Relationship Violence</em>, and <em>Child Abuse & Family Violence</em>.</p>
-          </div>
-          <div class="experience-item">
-            <h3>Graduate Application & Scholar Mentorship</h3>
-            <p class="project-meta">Independent Mentor</p>
-            <p>Providing one-on-one guidance to prospective graduate applicants on Statement of Purpose drafting, CV curation, funding strategies, and program selection.</p>
-          </div>
+        <section id="teaching">
+            <h2 class="section-title">Teaching & Mentorship</h2>
+            <div class="card-grid">
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Undergraduate Research Pedagogy & Mentorship</span>
+                        <span class="item-badge">Lab Lead</span>
+                    </div>
+                    <p class="item-desc">Train, supervise, and mentor undergraduate research assistants in qualitative coding protocols, literature mapping, IRB compliance, and academic writing at UC San Diego.</p>
+                </div>
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Graduate Teaching Assistant</span>
+                        <span class="item-badge">UCSD & SDSU</span>
+                    </div>
+                    <p class="item-desc">Courses served: <em>The Social Organization of Education (EDS 126)</em>, <em>Partners At Learning (PAL)</em>, <em>Relationship Violence</em>, and <em>Child Abuse & Family Violence</em>.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Community Praxis Section -->
-        <section id="community" class="section">
-          <h2 class="section-title">Community Praxis & Engagement</h2>
-          <p>
-            Active tutor, workshop facilitator, and guest speaker supporting college access and social-emotional transitions for youth through Casa de Amistad (Centro de Enseñanza) in San Diego since 2021.
-          </p>
+        <section id="community">
+            <h2 class="section-title">Community Praxis & Engagement</h2>
+            <div class="item-card">
+                <p class="item-desc">
+                    Active tutor, workshop facilitator, and guest speaker supporting college access and social-emotional transitions for youth through <strong>Casa de Amistad (Centro de Enseñanza)</strong> in San Diego since 2021.
+                </p>
+            </div>
         </section>
 
-        <!-- Artifacts Section -->
-        <section id="artifacts" class="section">
-          <h2 class="section-title">Artifacts & Creative Knowledge</h2>
-          <p>Visual artifacts, poems, and digital media commissioned to bridge research data with the lived human stories of study participants.</p>
-          <div class="gallery-grid">
-            <div class="artifact-placeholder">Visual Artifact Gallery</div>
-          </div>
+        <!-- CV Download -->
+        <section id="cv">
+            <a href="Marianna_Amato_CV.pdf" target="_blank" class="cv-button">View Full Curriculum Vitae (PDF)</a>
         </section>
-
-        <!-- CV Section -->
-        <section id="cv" class="section">
-          <a href="Marianna_Amato_CV.pdf" target="_blank" class="cv-button">View Full Curriculum Vitae (PDF)</a>
-        </section>
-      </div>
-    </main>
-  </div>
+    </div>
 </body>
 </html>
 
