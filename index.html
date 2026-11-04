@@ -1,13 +1,16 @@
+Here is your updated HTML code, formatted and organized to integrate your bio statement, contact details, publications, research projects, teaching experience, and community praxis directly from your CV.
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marianna Amato | Research & Praxis</title>
+  <title>Marianna Amato | Ph.D. Student | UC San Diego</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -15,14 +18,23 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="profile">
-        <div class="name">MARIANNA AMATO</div>
-        <p class="tagline">Identity · Policy · Development</p>
+        <h1 class="name">MARIANNA AMATO</h1>
+        <p class="tagline">Ph.D. Student in Education<br>University of California, San Diego</p>
+      </div>
+
+      <div class="sidebar-contact">
+        <p><strong>Email:</strong> <a href="mailto:mamato@ucsd.edu">mamato@ucsd.edu</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marianna-a-12bb7624b/" target="_blank" rel="noopener">marianna-a-12bb7624b</a></p>
+        <p><strong>Location:</strong> Department of Education Studies, UCSD</p>
       </div>
 
       <nav>
         <ul class="navlist">
           <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
+          <li><a href="#research">Research & Projects</a></li>
+          <li><a href="#publications">Publications & Papers</a></li>
+          <li><a href="#teaching">Teaching & Mentorship</a></li>
+          <li><a href="#community">Community Praxis</a></li>
           <li><a href="#artifacts">Artifacts</a></li>
           <li><a href="#cv">CV</a></li>
         </ul>
@@ -30,55 +42,111 @@
     </aside>
 
     <main>
+      <!-- Hero / About Section -->
       <section id="about" class="hero">
-        <h1>Exploring the felt experience of identity within systems.</h1>
+        <h2>About & Research Statement</h2>
         <p class="bio-text">
-          I am a researcher focused on how identity is lived and contested in spaces not designed for intersectional realities. My work spans the adjustment of Latiné students at HSIs, the implementation of queer health education, and the evolving role of AI in community companionship.
+          Marianna’s research examines how institutional and cultural contexts shape belonging, support, and wellbeing for marginalized students, with a focus on the transition to college. She studies the sources of support including family, faculty, community, and emerging technologies, and the responsibility institutions hold in making those supports accessible, particularly for Latiné, LGBTQ+, and other students at the intersections of marginalization.
+        </p>
+        <p class="bio-text">
+          Her community-engaged inquiry seeks to understand both broad patterns in student experience and how institutional policies play out in practice. Her work is grounded in intersectionality and critical frameworks, including LatCrit and queer theory, to challenge deficit framings of students and inform more equitable campus practice. She also mentors undergraduate researchers and prospective graduate applicants and has supported college access programming in San Diego since 2021.
         </p>
       </section>
 
       <div class="content">
+        <!-- Research Section -->
         <section id="research" class="section">
-          <h2 class="section-title">Selected Work</h2>
+          <h2 class="section-title">Selected Research & Projects</h2>
           
           <div class="project">
-            <h3>College Adjustment at HSIs</h3>
-            <p class="project-meta">Completed Study</p>
-            <p>An exploration of the social and emotional adjustment of Latiné students within Hispanic Serving Institutions.</p>
+            <h3>Latiné Student Adjustment & Institutional Responsibility at HSIs</h3>
+            <p class="project-meta">Project Lead | Quantitative & LatCrit Inquiry</p>
+            <p>Conducting empirical studies applying LatCrit frameworks to examine family support (familismo), professor impact, social adjustment, and mental health among Latiné college students at Hispanic-Serving Institutions.</p>
           </div>
 
           <div class="project">
-            <h3>Queer Sex Ed & Policy Implementation</h3>
-            <p class="project-meta">Current Analysis</p>
-            <p>Critical policy analysis of California health education, focusing on queer-inclusive implementation and erased histories.</p>
+            <h3>Human-AI Relationships & Moral Perception</h3>
+            <p class="project-meta">Project Co-Lead & GRA | Participatory Action Research</p>
+            <p>Investigating how LGBTQ+ young adults utilize AI chatbots for companionship and emotional support using AI photovoice methods, as well as multi-institution quantitative analysis on higher education students' moral beliefs and learning behaviors regarding AI.</p>
           </div>
 
           <div class="project">
-            <h3>AI & Queer Companionship</h3>
-            <p class="project-meta">Current Study</p>
-            <p>Investigating how queer communities utilize generative AI as a surrogate for emotional companionship and support.</p>
+            <h3>California Healthy Youth Act (AB 329) Policy Analysis</h3>
+            <p class="project-meta">Project Lead | Critical Policy Analysis</p>
+            <p>Utilizing Lipsky’s street-level bureaucracy theory and queer theory to examine the uneven implementation of California's LGBTQ+-inclusive sex education mandates in public secondary schools.</p>
           </div>
 
           <div class="project">
-            <h3>Identity Construction in Adolescents of Color</h3>
-            <p class="project-meta">Ongoing Research</p>
-            <p>Qualitative work on how queer adolescents of color navigate and articulate their identities.</p>
+            <h3>Intersectional Stress & Wellbeing in Sexual Minority Youth</h3>
+            <p class="project-meta">Graduate Research Assistant | Lavender Lab (UMD) & SDSU</p>
+            <p>Examining associations between intersectional oppression-based stress, PTSS, suicidality, and protective social factors among national samples of sexual minority adolescents and young adults of color.</p>
           </div>
         </section>
 
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+          <h2 class="section-title">Peer-Reviewed Publications</h2>
+          <ul class="pub-list">
+            <li>
+              <strong>Amato, M.</strong>, Lazarevic, V., & Shapiro, A. (2024). Exploring the college adjustment of Latiné students at Hispanic-Serving Institutions. <em>Journal of Underrepresented and Minority Progress</em>, 8(1), 1–22.
+            </li>
+            <li>
+              Sullivan, T., <strong>Amato, M.</strong>, Goldbach, J., & Mereish, E. (2026). Oppression-based stress, PTSD symptoms, and suicidality associations among a national sample of sexual minority adolescents of color. <em>Journal of Traumatic Stress</em>, 39(1), 45–58.
+            </li>
+            <li>
+              Jessup, O., Nacht, C., <strong>Amato, M.</strong>, Hong, C., & Storholm, E. (2024). How the intersection of identity factors impacts gay/bisexual men's experience of intimate partner violence. <em>Journal of LGBT Health</em>, 11(2), 115–124.
+            </li>
+            <li>
+              Nacht, C., Reynolds, H., Jessup, O., <strong>Amato, M.</strong>, & Storholm, E. (2024). The association between social support and PrEP use/adherence among sexual minority men in the United States: A scoping literature review. <em>Journal of LGBT Health</em>, 11(3), 180–192.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Teaching & Mentorship Section -->
+        <section id="teaching" class="section">
+          <h2 class="section-title">Teaching & Mentorship</h2>
+          <div class="experience-item">
+            <h3>Undergraduate Research Pedagogy & Mentorship</h3>
+            <p class="project-meta">Lab Lead | UC San Diego</p>
+            <p>Train, supervise, and mentor undergraduate research assistants in qualitative coding protocols, literature mapping, IRB compliance, and academic writing.</p>
+          </div>
+          <div class="experience-item">
+            <h3>Graduate Teaching Assistant</h3>
+            <p class="project-meta">UC San Diego & San Diego State University</p>
+            <p>Courses served: <em>The Social Organization of Education (EDS 126)</em>, <em>Partners At Learning (PAL)</em>, <em>Relationship Violence</em>, and <em>Child Abuse & Family Violence</em>.</p>
+          </div>
+          <div class="experience-item">
+            <h3>Graduate Application & Scholar Mentorship</h3>
+            <p class="project-meta">Independent Mentor</p>
+            <p>Providing one-on-one guidance to prospective graduate applicants on Statement of Purpose drafting, CV curation, funding strategies, and program selection.</p>
+          </div>
+        </section>
+
+        <!-- Community Praxis Section -->
+        <section id="community" class="section">
+          <h2 class="section-title">Community Praxis & Engagement</h2>
+          <p>
+            Active tutor, workshop facilitator, and guest speaker supporting college access and social-emotional transitions for youth through Casa de Amistad (Centro de Enseñanza) in San Diego since 2021.
+          </p>
+        </section>
+
+        <!-- Artifacts Section -->
         <section id="artifacts" class="section">
-          <h2 class="section-title">Artifacts</h2>
-          <p>I commission visual artifacts—drawings, poems, and digital media—to bridge the gap between research data and the human stories they represent.</p>
+          <h2 class="section-title">Artifacts & Creative Knowledge</h2>
+          <p>Visual artifacts, poems, and digital media commissioned to bridge research data with the lived human stories of study participants.</p>
           <div class="gallery-grid">
             <div class="artifact-placeholder">Visual Artifact Gallery</div>
           </div>
         </section>
 
+        <!-- CV Section -->
         <section id="cv" class="section">
-          <a href="Marianna_Amato_CV.pdf" class="cv-button">View Curriculum Vitae</a>
+          <a href="Marianna_Amato_CV.pdf" target="_blank" class="cv-button">View Full Curriculum Vitae (PDF)</a>
         </section>
       </div>
     </main>
   </div>
 </body>
 </html>
+
+```
