@@ -1,4 +1,4 @@
-Here is a complete, self-contained HTML file using the **single-column centered card layout** from the original code styling (clean white container, top header, elegant typography, and modern cards for projects and publications). It combines the aesthetic structure you prefer with all your actual CV data and research details.
+
 
 ```html
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ Here is a complete, self-contained HTML file using the **single-column centered 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marianna Amato | Ph.D. Student, Education | UCSD</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1e3a8a; /* Deep academic navy */
@@ -35,7 +35,7 @@ Here is a complete, self-contained HTML file using the **single-column centered 
         }
 
         .container {
-            max-width: 860px;
+            max-width: 880px;
             margin: 2rem auto;
             padding: 3.5rem;
             background: #ffffff;
@@ -45,9 +45,7 @@ Here is a complete, self-contained HTML file using the **single-column centered 
 
         /* HEADER & CONTACT */
         header {
-            border-bottom: 2px solid var(--border);
             padding-bottom: 2rem;
-            margin-bottom: 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -56,7 +54,7 @@ Here is a complete, self-contained HTML file using the **single-column centered 
         }
 
         .profile-titles h1 {
-            font-size: 2.25rem;
+            font-size: 2.35rem;
             font-weight: 700;
             color: var(--primary);
             letter-spacing: -0.02em;
@@ -73,7 +71,7 @@ Here is a complete, self-contained HTML file using the **single-column centered 
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 0.4rem;
+            gap: 0.35rem;
             font-size: 0.95rem;
         }
 
@@ -87,11 +85,16 @@ Here is a complete, self-contained HTML file using the **single-column centered 
             text-decoration: underline;
         }
 
+        .divider {
+            border: 0;
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 2rem;
+        }
+
         /* NAVIGATION BAR */
         nav {
-            margin-bottom: 3rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 2.5rem;
         }
 
         nav ul {
@@ -103,9 +106,9 @@ Here is a complete, self-contained HTML file using the **single-column centered 
 
         nav a {
             text-decoration: none;
-            color: var(--text-muted);
+            color: var(--text-dark);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             transition: color 0.2s ease;
         }
 
@@ -113,36 +116,64 @@ Here is a complete, self-contained HTML file using the **single-column centered 
             color: var(--primary);
         }
 
+        /* QUOTE CARD */
+        .quote-card {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.75rem 2rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .quote-author {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
         /* SECTIONS */
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         h2.section-title {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 1.25rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
             border-left: 4px solid var(--primary);
             padding-left: 0.75rem;
         }
 
-        /* ABOUT / BIO */
+        /* BIO / POSITIONALITY CARD */
         .bio-card {
-            background-color: var(--bg-light);
+            background-color: #ffffff;
             padding: 1.75rem;
             border-radius: 8px;
             border: 1px solid var(--border);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         .bio-card p {
-            margin-bottom: 1rem;
             font-size: 1.05rem;
             color: #334155;
             line-height: 1.7;
+            margin-bottom: 1rem;
         }
 
         .bio-card p:last-child {
@@ -200,28 +231,64 @@ Here is a complete, self-contained HTML file using the **single-column centered 
             line-height: 1.6;
         }
 
-        /* LIST STYLES (PUBLICATIONS) */
+        /* PUBLICATIONS LIST */
         .pub-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
-        .pub-list li {
-            padding: 1.25rem;
-            border-left: 3px solid var(--primary);
-            background: var(--bg-light);
+        .pub-card {
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
             border-radius: 0 8px 8px 0;
-            font-size: 0.98rem;
-            color: var(--text-dark);
+            padding: 1.5rem;
+            background: #ffffff;
         }
 
-        .pub-list strong {
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
             color: var(--primary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+        }
+
+        .pub-title:hover {
+            text-decoration: underline;
+        }
+
+        .pub-authors {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-journal {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .pub-summary {
+            font-size: 0.95rem;
+            color: #334155;
+            background: var(--bg-light);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            line-height: 1.5;
         }
 
         /* BUTTONS */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .cv-button {
             display: inline-block;
             background-color: var(--primary);
@@ -236,6 +303,33 @@ Here is a complete, self-contained HTML file using the **single-column centered 
 
         .cv-button:hover {
             background-color: var(--primary-hover);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .secondary-button:hover {
+            background-color: var(--accent-bg);
+        }
+
+        /* ARTIFACTS GALLERY PLACEHOLDER */
+        .artifact-box {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 2.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            background: var(--bg-light);
         }
 
         @media (max-width: 640px) {
@@ -266,31 +360,40 @@ Here is a complete, self-contained HTML file using the **single-column centered 
             <div class="contact-info">
                 <span><strong>Email:</strong> <a href="mailto:mamato@ucsd.edu">mamato@ucsd.edu</a></span>
                 <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marianna-a-12bb7624b/" target="_blank" rel="noopener">marianna-a-12bb7624b</a></span>
+                <span><strong>UCSD Profile:</strong> <a href="https://eds.ucsd.edu/graduate/doctoral/phd/phd-students/phd9-profiles/amato_m.html" target="_blank" rel="noopener">eds.ucsd.edu/amato_m</a></span>
                 <span style="color: var(--text-muted);">San Diego, CA</span>
             </div>
         </header>
 
+        <hr class="divider">
+
         <!-- Top Navigation -->
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">About & Positionality</a></li>
                 <li><a href="#research">Research & Projects</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#teaching">Teaching & Mentorship</a></li>
                 <li><a href="#community">Community Praxis</a></li>
+                <li><a href="#artifacts">Artifacts</a></li>
                 <li><a href="#cv">CV</a></li>
             </ul>
         </nav>
 
-        <!-- About Section -->
+        <hr class="divider">
+
+        <!-- Quote Card -->
+        <div class="quote-card">
+            <span class="quote-text">“I don’t study to know more, but to ignore less.”</span>
+            <span class="quote-author">Juana Inés de la Cruz</span>
+        </div>
+
+        <!-- About & Positionality Section -->
         <section id="about">
-            <h2 class="section-title">About & Research Statement</h2>
+            <h2 class="section-title">About & Positionality</h2>
             <div class="bio-card">
                 <p>
-                    Marianna’s research examines how institutional and cultural contexts shape belonging, support, and wellbeing for marginalized students, with a focus on the transition to college. She studies the sources of support including family, faculty, community, and emerging technologies, and the responsibility institutions hold in making those supports accessible, particularly for Latiné, LGBTQ+, and other students at the intersections of marginalization.
-                </p>
-                <p>
-                    Her community-engaged inquiry seeks to understand both broad patterns in student experience and how institutional policies play out in practice. Her work is grounded in intersectionality and critical frameworks, including LatCrit and queer theory, to challenge deficit framings of students and inform more equitable campus practice. She also mentors undergraduate researchers and prospective graduate applicants and has supported college access programming in San Diego since 2021.
+                    Marianna’s research examines how institutional and cultural contexts shape belonging, support, and wellbeing for marginalized students, with a focus on the transition to college. She studies sources of support including family, faculty, community, and emerging technologies, as well as the responsibility institutions hold in making those supports accessible, particularly for Latiné, LGBTQ+, and other students at the intersections of marginalization. As a queer, neurodivergent, Latiné scholar, her work is grounded in lived experience and a commitment to challenging deficit framings of students, creating collaborative research that validates student stories, and informing more equitable campus practice.
                 </p>
             </div>
         </section>
@@ -320,7 +423,7 @@ Here is a complete, self-contained HTML file using the **single-column centered 
                         <span class="item-title">California Healthy Youth Act (AB 329) Policy Analysis</span>
                         <span class="item-badge">Project Lead</span>
                     </div>
-                    <p class="item-desc">Utilizing Lipsky’s street-level bureaucracy theory and queer theory to examine the uneven implementation of California's LGBTQ+-inclusive sex education mandates in public secondary schools.</p>
+                    <p class="item-desc">Utilizing Lipsky’s street-level bureaucracy theory and queer theory to examine the implementation of California's LGBTQ+-inclusive sex education mandates in public secondary schools.</p>
                 </div>
 
                 <div class="item-card">
@@ -337,17 +440,48 @@ Here is a complete, self-contained HTML file using the **single-column centered 
         <section id="publications">
             <h2 class="section-title">Peer-Reviewed Publications</h2>
             <ul class="pub-list">
-                <li>
-                    <strong>Amato, M.</strong>, Lazarevic, V., & Shapiro, A. (2024). Exploring the college adjustment of Latiné students at Hispanic-Serving Institutions. <em>Journal of Underrepresented and Minority Progress</em>, 8(1), 1–22.[cite: 3]
+                <li class="pub-card">
+                    <a href="https://ojed.org/index.php/jump/article/view/6311" target="_blank" rel="noopener" class="pub-title">
+                        Exploring the College Adjustment of Latiné Students at Hispanic Serving Institutions
+                    </a>
+                    <div class="pub-authors"><strong>Amato, M.</strong>, Lazarevic, V., & Shapiro, A. (2024)</div>
+                    <div class="pub-journal">Journal of Underrepresented and Minority Progress, 8(SI-2), 78–98.</div>
+                    <div class="pub-summary">
+                        <strong>Key Finding:</strong> Familismo acts as a protective factor directly associated with positive academic adjustment and lower depressive symptoms, highlighting how faculty can mirror familismo values to enhance student support at HSIs.
+                    </div>
                 </li>
-                <li>
-                    Sullivan, T., <strong>Amato, M.</strong>, Goldbach, J., & Mereish, E. (2026). Oppression-based stress, PTSD symptoms, and suicidality associations among a national sample of sexual minority adolescents of color. <em>Journal of Traumatic Stress</em>, 39(1), 45–58.[cite: 3]
+
+                <li class="pub-card">
+                    <a href="https://doi.org/10.1002/jts.70069" target="_blank" rel="noopener" class="pub-title">
+                        Oppression-Based Stressors, Posttraumatic Stress Symptoms, and Self-Injurious Thoughts and Behaviors Among a National Sample of Queer Adolescents of Color
+                    </a>
+                    <div class="pub-authors">Sullivan, T. R., <strong>Amato, M.</strong>, Goldbach, J. T., & Mereish, E. H. (2026)</div>
+                    <div class="pub-journal">Journal of Traumatic Stress, 39(1), 45–58.</div>
+                    <div class="pub-summary">
+                        <strong>Key Finding:</strong> Examined how unique, intersectional oppression-based stressors at the convergence of heterosexism and racism serve as significant risk factors for trauma-related symptoms and self-harm among queer BIPOC youth.
+                    </div>
                 </li>
-                <li>
-                    Jessup, O., Nacht, C., <strong>Amato, M.</strong>, Hong, C., & Storholm, E. (2024). How the intersection of identity factors impacts gay/bisexual men's experience of intimate partner violence. <em>Journal of LGBT Health</em>, 11(2), 115–124.[cite: 3]
+
+                <li class="pub-card">
+                    <a href="https://doi.org/10.1089/lgbt.2023.0129" target="_blank" rel="noopener" class="pub-title">
+                        How Intimate Partner Violence Is Influenced by Social Identity Among Sexual Minority Men
+                    </a>
+                    <div class="pub-authors">Jessup, O., Nacht, C. L., <strong>Amato, M.</strong>, Reynolds, H. E., Felner, J. K., Hong, C., ... & Storholm, E. D. (2024)</div>
+                    <div class="pub-journal">LGBT Health, 11(6), 465–474.</div>
+                    <div class="pub-summary">
+                        <strong>Key Finding:</strong> Identified how social identity power dynamics (such as immigration status, race, and outness) and internalized homophobia shape partner violence, calling for intersectional intervention models.
+                    </div>
                 </li>
-                <li>
-                    Nacht, C., Reynolds, H., Jessup, O., <strong>Amato, M.</strong>, & Storholm, E. (2024). The association between social support and PrEP use/adherence among sexual minority men in the United States: A scoping literature review. <em>Journal of LGBT Health</em>, 11(3), 180–192.[cite: 3]
+
+                <li class="pub-card">
+                    <a href="https://doi.org/10.1007/s10461-024-04446-4" target="_blank" rel="noopener" class="pub-title">
+                        The Association Between Social Support and Pre-Exposure Prophylaxis Use Among Sexual Minority Men in the United States: A Scoping Literature Review
+                    </a>
+                    <div class="pub-authors">Nacht, C. L., Reynolds, H. E., Jessup, O., <strong>Amato, M.</strong>, & Storholm, E. D. (2024)</div>
+                    <div class="pub-journal">AIDS and Behavior, 28(11), 3559–3573.</div>
+                    <div class="pub-summary">
+                        <strong>Key Finding:</strong> Summarized national evidence on how distinct types and sources of social support (including chosen family and gay community attachment) influence PrEP adoption and adherence.
+                    </div>
                 </li>
             </ul>
         </section>
@@ -383,9 +517,24 @@ Here is a complete, self-contained HTML file using the **single-column centered 
             </div>
         </section>
 
-        <!-- CV Download -->
+        <!-- Artifacts Section -->
+        <section id="artifacts">
+            <h2 class="section-title">Artifacts & Creative Knowledge</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                Visual artifacts, poems, and digital media commissioned to bridge research data with the lived human stories of study participants.
+            </p>
+            <div class="artifact-box">
+                <p><strong>Visual Artifact Gallery</strong></p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Original creative artwork commissioned from study participant alignments (Coming Soon).</p>
+            </div>
+        </section>
+
+        <!-- CV & External Links -->
         <section id="cv">
-            <a href="Marianna_Amato_CV.pdf" target="_blank" class="cv-button">View Full Curriculum Vitae (PDF)</a>
+            <div class="btn-group">
+                <a href="Marianna_Amato_CV.pdf" target="_blank" class="cv-button">View Curriculum Vitae (PDF)</a>
+                <a href="https://eds.ucsd.edu/graduate/doctoral/phd/phd-students/phd9-profiles/amato_m.html" target="_blank" rel="noopener" class="secondary-button">UCSD Doctoral Profile</a>
+            </div>
         </section>
     </div>
 </body>
